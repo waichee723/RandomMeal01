@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="ingredient"
+            type="com.waichee.randommeal01.network.Ingredient" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/item_ingredient"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/textView_ingredientName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/textView_ingredientMeasure"
+            tool:text="sugarName"
+            app:ingredientName="@{ingredient}"/>
+
+        <TextView
+            android:id="@+id/textView_ingredientMeasure"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/textView_ingredientName"
+            app:layout_constraintEnd_toEndOf="parent"
+            tool:text="SugarMeasure"
+            app:ingredientMeasure="@{ingredient}"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
